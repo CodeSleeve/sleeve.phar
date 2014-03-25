@@ -2,6 +2,7 @@
 
 class {{Entity}} extends Eloquent
 {
+
 {% for relationship in belongsTo %}
 	/**
 	 * A {{entity}} belongsTo a {{relationship.Name}}
@@ -11,4 +12,25 @@ class {{Entity}} extends Eloquent
 		return $this->belongsTo('{{Entity}}');
 	}
 {% endfor %}
+
+{% for relationship in hasMany %}
+	/**
+	 * A {{entity}} hasMany {{relationship.Names}}
+	 */
+	public function {{relationship.names}}()
+	{
+		return $this->hasMany('{{Entity}}');
+	}
+{% endfor %}
+
+{% for relationship in belongsToMany %}
+	/**
+	 * A {{entity}} belongsToMany {{relationship.Names}}
+	 */
+	public function {{relationship.names}}()
+	{
+		return $this->belongsToMany('{{Entity}}');
+	}
+{% endfor %}
+
 }
