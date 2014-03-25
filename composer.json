@@ -1,0 +1,27 @@
+{
+    "name": "codesleeve/sleeve.phar",
+    "description": "Create boilerplate for Laravel 4. Don't like our templates? No problem, just create your own.",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Kelt Dockins",
+            "email": "kelt@codesleeve.com"
+        }
+    ],
+    "autoload": {
+        "classmap": [
+            "src/lib/"
+        ]
+    },
+    "require": {
+        "codesleeve/generator": "dev-master",
+        "illuminate/support": "4.1.*",
+        "guzzle/guzzle": "3.7.*",
+        "symfony/console": "2.4.*"
+    },
+    "config": {
+        "bin-dir": "bin",
+        "vendor-dir": "src/vendor"
+    },
+    "minimum-stability": "dev"
+}

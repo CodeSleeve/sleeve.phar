@@ -1,0 +1,9 @@
+{
+	"model": {
+		"templates": "templates/model",
+		"context": "LaravelContext",
+		"command": "LaravelGenerator",
+		"writer": "LaravelWriter",
+		"description": "Generate a new model class"
+	}
+}
