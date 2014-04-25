@@ -2,6 +2,16 @@
 
 class {{Entity}} extends Eloquent
 {
+	/**
+	 * List of attributes for a {{entity}}
+	 *
+	 * @var array
+	 */
+	protected $fillable = [
+{% for attribute in attributes %}
+		'{{attribute.name_unmodified}}',
+{% endfor %}
+	];
 
 {% for relationship in belongsTo %}
 	/**

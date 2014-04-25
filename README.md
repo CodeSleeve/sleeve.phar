@@ -3,7 +3,7 @@ sleeve.phar
 
 ## Quickstart
 
-Download [sleeve.phar](google.com) and place it somewhere
+Download [sleeve.phar](https://github.com/CodeSleeve/sleeve.phar/raw/master/sleeve.phar) and place it somewhere
 
 ```
 	sudo mv sleeve.phar /usr/bin/local/sleeve
@@ -16,23 +16,51 @@ Now ensure everything is working correctly by running,
 	sleeve
 ```
 
-## How does it work?
+One additional note here. I create an alias in my `~/.bashrc` so I can use `g model` instead of `sleeve model`.
 
-Out of the box you have these generators available.
 
-- assets
-- command
-- controller
-- migration
-- model
-- resource
-- scaffold
-- seed
-- test
-- view
+## Like videos?
 
-But don't worry, if that doesn't quite fit your needs then you can jump to the next section about creating
+Here is a 5 minute video showing how to install, use and most importantly tweak this thing.
 
+// TODO VIDEO HERE
+
+## How does it all work (for me)?
+
+This package mainly piggy backs off of the architecture provided by [Codesleeve\generator](https://github.com/CodeSleeve/generator/blob/master/README.md). Out of the box you have these generators available.
+
+* command - create a new laravel command for entity
+* controller - create a new laravel controller for entity
+* laravel - create a new laravel application (this is copied from Taylor's laravel.phar)
+* migration - create a new laravel migration for entity
+* model - create a new laravel model for entity
+* scaffold - scaffold out model, views, controller, migration, test and seed for entity
+* seed - create a new seed file for entity
+* test - create a new integration test for entity
+* view - create a new view for entity
+
+But don't worry, if that doesn't quite fit the bill then you can jump to the next section about your own customizations.
+
+## Customizing the generator
+
+You can completely override and configure any aspect of the generators. Create a generator.json that is where you will be running your sleeve command from (i.e. the laravel project root). You can also use `sleeve -c /some/path/to/config.json` if you want.
+
+Here are a list of things you can override.
+
+```
+	"models" {
+		"templates": "templates/models",
+        "context": "Codesleeve\\Generator\\EntityContext",
+        "command": "Codesleeve\\Generator\\GeneratorCommand",
+        "parser": "Codesleeve\\Generator\\TwigParser",
+        "writer": "Codesleeve\\Generator\\FileWriter",
+        "variables": {
+
+    	}
+	}
+```
+
+You can create your own generators, modify templates, contexts, even swap out the Twig template engine for something else and write files where ever you please. For more info on each thing you can customize read further.
 
 ## Context Generation
 
@@ -53,39 +81,22 @@ Here is a list
 
 - **_entities_** - snake plural, i.e. user_settings
 
-- **fields** - i.e. `['name' => 'stripe_id', 'type' => 'integer', 'index' => 'unique'], ['name' => 'backup_email', 'type' => 'string']`
+- **fields** - i.e. `['name_unmodified' => 'stripe_id', name' => 'stripeId', 'Name' => 'StripeId', '_name_' => 'stripe_id', 'names' => 'stripeIds', 'Names' => 'StripeIds', '_names_' => 'stripe_ids', type' => 'integer', 'index' => 'unique']
 
-- **belongsTo** - i.e. ['user']
+- **belongsTo** - i.e. `['name_unmodified' => 'user', name' => 'user', 'Name' => 'User', '_name_' => 'user', 'names' => 'users', 'Names' => 'Users', '_names_' => 'users']
 
-- **hasMany** - i.e. []
+- **hasMany** - i.e. [] an array much like belongsTo
 
-- **hasOne** - i.e. []
-
-- **belongsToMany** - i.e. []
+- **belongsToMany** - i.e. [] an array much like belongsTo
 
 - **migration_timestamp** - i.e. `2014_04_01_000000_`
 
-And more as we upgrade our `LaravelContext` generator. These are pretty generic variable names (with exception of `migration_timestamp`) so they can be re-used. However, we have created a [LaravelContext](...) for things specific to Laravel.
+- **migration_filename** - i.e. `2014_04_01_000000_add_user_settings_table`
 
+- **migration_classname** - i.e. `AddUserSettingsTable`
 
-## Customizing the generator
+And more as we upgrade our `LaravelContext` generator. These are pretty generic variable names (with exception of `migration_` stuff) so this context can be re-used in other generators. We have created [LaravelContext](https://github.com/CodeSleeve/sleeve.phar/blob/master/src/lib/LaravelContext.php) for generating variables specific to Laravel.
 
-You can completely override and configure any aspect of the generators. Create a sleeve.json that is where you will be running your sleeve command from (i.e. the laravel project root). You can also use `sleeve -c /some/path/to/config.json` if you want.
-
-Here are a list of things you can override.
-
-```
-	"models" {
-		"templates": "templates/models",
-        "context": "Codesleeve\\Generator\\EntityContext",
-        "command": "Codesleeve\\Generator\\GeneratorCommand",
-        "parser": "Codesleeve\\Generator\\TwigParser",
-        "writer": "Codesleeve\\Generator\\FileWriter",
-        "variables": {
-
-    	}
-	}
-```
 
 ### Variables
 
@@ -152,3 +163,8 @@ Check it out. https://github.com/CodeSleeve/generator/blob/master/README.md
 ## License
 
 sleeve.phar is open-source software licensed under the [MIT license](http://opensource.org/licenses/MIT)
+
+
+## How can I share my generator.json and templates?
+
+So you've got some cool generators and templates eh? Put in a pull request about them (be sure to fork and show me your setup). Remember it doesn't have to be laravel specific templates either. You can create generators for other languages if you want.

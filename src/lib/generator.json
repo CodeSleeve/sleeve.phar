@@ -1,9 +1,74 @@
 {
+	"command" : {
+		"templates": "templates/command",
+		"context": "LaravelContext",
+		"command": "LaravelCommand",
+		"writer": "LaravelWriter",
+		"description": "Generate a new Laravel command",
+		"variables": {}
+	},
+
+	"controller" : {
+		"templates": "templates/controller",
+		"context": "LaravelContext",
+		"command": "LaravelCommand",
+		"writer": "LaravelWriter",
+		"description": "Generate a new Laravel controller",
+		"variables": {}
+	},
+
 	"model": {
 		"templates": "templates/model",
 		"context": "LaravelContext",
-		"command": "LaravelGenerator",
+		"command": "LaravelCommand",
 		"writer": "LaravelWriter",
-		"description": "Generate a new model class"
+		"description": "Generate a new model class",
+		"variables": {}
+	},
+
+	"migration": {
+		"templates": "templates/migration",
+		"context": "LaravelContext",
+		"command": "LaravelCommand",
+		"writer": "LaravelWriter",
+		"description": "Generate a new Laravel migration",
+		"variables": {}
+	},
+
+	"scaffold": {
+		"templates": "templates/scaffold",
+		"context": "LaravelContext",
+		"command": "LaravelCommand",
+		"writer": "LaravelWriter",
+		"description": "Generate a new Laravel database seeder",
+		"variables": {}
+	},
+
+	"seed": {
+		"templates": "templates/seed",
+		"context": "LaravelContext",
+		"command": "LaravelCommand",
+		"writer": "LaravelWriter",
+		"description": "Generate a new Laravel database seeder",
+		"variables": {}
+	},
+
+	"test": {
+		"templates": "templates/test",
+		"context": "LaravelContext",
+		"command": "LaravelCommand",
+		"writer": "LaravelWriter",
+		"description": "Generate a new Laravel integration test",
+		"variables": {}
+	},
+
+	"view": {
+		"templates": "templates/view",
+		"context": "LaravelContext",
+		"command": "LaravelCommand",
+		"writer": "LaravelWriter",
+		"description": "Generate Laravel views",
+		"variables": {}
 	}
+
 }
