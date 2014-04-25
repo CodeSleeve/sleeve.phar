@@ -27,7 +27,7 @@ Here is a 5 minute video showing how to install, use and most importantly tweak 
 
 ## How does it all work (for me)?
 
-This package mainly piggy backs off of the architecture provided by [Codesleeve\generator](https://github.com/CodeSleeve/generator/blob/master/README.md). Out of the box you have these generators available.
+This package mainly piggy backs off of the architecture provided by [Codesleeve\generator](https://github.com/CodeSleeve/generator). Out of the box you have these generators available.
 
 * command - create a new laravel command for entity
 * controller - create a new laravel controller for entity
@@ -43,7 +43,7 @@ But don't worry, if that doesn't quite fit the bill then you can jump to the nex
 
 ## Customizing the generator
 
-You can completely override and configure any aspect of the generators. Create a generator.json that is where you will be running your sleeve command from (i.e. the laravel project root). You can also use `sleeve -c /some/path/to/config.json` if you want.
+You can completely override and configure any aspect of the generators. Create a [generator.json](https://github.com/CodeSleeve/sleeve.phar/blob/master/src/lib/generator.json) that is where you will be running your sleeve command from (i.e. the laravel project root). You can also use `sleeve -c /some/path/to/config.json` if you want.
 
 Here are a list of things you can override.
 
@@ -102,7 +102,7 @@ And more as we upgrade our `LaravelContext` generator. These are pretty generic 
 
 So you might be wondering what each of these things do? Let's start with variables.
 
-Let's say you want to add some new variables, if they are static just add a line in your `sleeve.json`
+Let's say you want to add some new variables, if they are static just add a line in your `generator.json`
 
 ```js
 	"models" {
@@ -141,7 +141,7 @@ And remember, context generators are simple. They only create associative arrays
 
 This is just the relative path to the directory that hold the structure and files for this layout. Anything prefixed and suffixed with `__` will be considered a variable (if the variable exists for that). So if you have `app/models/__Entity__.php` that will be generated as `app/models/User.php`.
 
-If you want to create your own templates but don't want to fool around with the sleeve.json, you can create a templates directory relative to where you will be running your generator (e.g. in your laravel project root) and `sleeve.phar` will pick those up instead of the defaults. It's that simple.
+If you want to create your own templates but don't want to fool around with the generator.json, you can create a templates directory relative to where you will be running your generator (e.g. in your laravel project root) and `sleeve.phar` will pick those up instead of the defaults. It's that simple.
 
 ### Parser
 
@@ -150,7 +150,7 @@ We use Twig for our parser and out of the box Twig is just plain bad ass for a t
 
 ### Command
 
-If you want to treat some command differently for say, `assets` then you can override the `command` option in your sleeve.json. This will be fed a [GeneratorConfigInterface](https://github.com/CodeSleeve/generator/blob/master/src/Codesleeve/Generator/Interfaces/GeneratorConfigInterface.php) as a dependency for you to work with. You'll probably want to [check out how the default GeneratorCommand works](https://github.com/CodeSleeve/generator/blob/master/src/Codesleeve/Generator/GeneratorCommand.php).
+If you want to treat some command differently for say, `assets` then you can override the `command` option in your generator.json. This will be fed a [GeneratorConfigInterface](https://github.com/CodeSleeve/generator/blob/master/src/Codesleeve/Generator/Interfaces/GeneratorConfigInterface.php) as a dependency for you to work with. You'll probably want to [check out how the default GeneratorCommand works](https://github.com/CodeSleeve/generator/blob/master/src/Codesleeve/Generator/GeneratorCommand.php).
 
 
 ## About Codesleeve\Generator
