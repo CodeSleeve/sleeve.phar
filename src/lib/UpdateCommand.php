@@ -8,7 +8,7 @@ use Symfony\Component\Console\Output\OutputInterface;
 
 class UpdateCommand extends Command
 {
-    const MANIFEST_FILE = 'http://codesleeve.github.io/sleeve.phar/manifest.json';
+    const MANIFEST_FILE = 'https://raw.githubusercontent.com/CodeSleeve/sleeve.phar/master/manifest.json';
 
     protected function configure()
     {
@@ -17,8 +17,6 @@ class UpdateCommand extends Command
 
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-    	dd($this->getApplication()->getVersion());
-
         $manager = new Manager(Manifest::loadFile(self::MANIFEST_FILE));
         $manager->update($this->getApplication()->getVersion(), true);
     }

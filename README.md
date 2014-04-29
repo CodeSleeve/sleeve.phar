@@ -3,7 +3,7 @@ sleeve.phar
 
 ## Quickstart
 
-Download [sleeve.phar](https://github.com/CodeSleeve/sleeve.phar/blob/master/downloads/sleeve-1.0.0.phar?raw=true) and place it somewhere
+Download [sleeve.phar](https://github.com/CodeSleeve/sleeve.phar/blob/master/downloads/sleeve.phar?raw=true) and place it somewhere
 
 ```
 	sudo mv sleeve.phar /usr/bin/local/sleeve

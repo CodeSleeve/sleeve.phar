@@ -16,6 +16,6 @@
         }
     ],
     "main": "bin/sleeve",
-    "output": "sleeve.phar",
+    "output": "downloads/sleeve.phar",
     "stub": true
 }
