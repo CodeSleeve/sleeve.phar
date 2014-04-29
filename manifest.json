@@ -3,6 +3,6 @@
         "name": "sleeve.phar",
         "sha1": "9e693fb12011c954e2e4714d85e66016867a02a7", // openssl sha1 downloads/sleeve.phar
         "url": "https://github.com/CodeSleeve/sleeve.phar/blob/master/downloads/sleeve.phar?raw=true",
-        "version": "1.1.0"
+        "version": "1.1.1"
     }
 ]
