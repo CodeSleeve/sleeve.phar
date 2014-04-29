@@ -10,6 +10,8 @@ class ApplicationFactory
 
 		$app->add(new Laravel\Craft\NewCommand);
 
+		$app->add(new UpdateCommand);
+
 		return $app;
 	}
 }

@@ -17,6 +17,8 @@ class UpdateCommand extends Command
 
     protected function execute(InputInterface $input, OutputInterface $output)
     {
+    	dd($this->getApplication()->getVersion());
+
         $manager = new Manager(Manifest::loadFile(self::MANIFEST_FILE));
         $manager->update($this->getApplication()->getVersion(), true);
     }
