@@ -23,18 +23,18 @@ class SelfUpdateCommand extends Command
 
         $manager = new Manager(Manifest::loadFile(self::MANIFEST_FILE));
 
-        $output = $manager->update($appVersion);
+        $updated = $manager->update($appVersion);
 
-        return ($updated) ? $this->updated($appName, $appVersion) : $this->notUpdated($appName, $appVersion);
+        return ($updated) ? $this->updated($output, $appName, $appVersion) : $this->notUpdated($output, $appName, $appVersion);
     }
 
-    protected function updated($appName, $appVersion)
+    protected function updated($output, $appName, $appVersion)
     {
-        $this->output->writeln('Updated ' . $appName. ' to newest version');
+        $output->writeln('Updated ' . $appName. ' to newest version');
     }
 
-    protected function notUpdated($appName, $appVersion)
+    protected function notUpdated($output, $appName, $appVersion)
     {
-        $this->output->writeln('Currently on latest version, ' . $appName . ' ' . $appVersion);
+        $output->writeln('Currently on latest version, ' . $appName . ' ' . $appVersion);
     }
 }

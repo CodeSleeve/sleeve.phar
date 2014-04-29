@@ -1,7 +1,7 @@
 [
     {
         "name": "sleeve.phar",
-        "sha1": "477600a7966201bed4ff9bfb2bf1c3953a6442cf", // openssl sha1 downloads/sleeve.phar
+        "sha1": "9e693fb12011c954e2e4714d85e66016867a02a7", // openssl sha1 downloads/sleeve.phar
         "url": "https://github.com/CodeSleeve/sleeve.phar/blob/master/downloads/sleeve.phar?raw=true",
         "version": "1.1.0"
     }
