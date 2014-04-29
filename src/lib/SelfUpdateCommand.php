@@ -12,7 +12,7 @@ class SelfUpdateCommand extends Command
 
     protected function configure()
     {
-        $this->setName('self-update')->setDescription('Update ' . $this->getApplication()->getName() . ' to the latest version');
+        $this->setName('self-update')->setDescription('Update this phar to the latest version');
     }
 
     protected function execute(InputInterface $input, OutputInterface $output)

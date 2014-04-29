@@ -1,7 +1,7 @@
 <?php
 
 // this will set the version for us
-$version = '1.1.4';
+$version = '1.1.5';
 
 //
 //
@@ -37,7 +37,7 @@ $oldsha1 = sha1_file('downloads/sleeve.phar');
 //
 // create new phar file
 //
-print "Creating new phar file (box build), this could take a a few minutes...";
+print "Creating new phar file (box build), this could take a a few minutes..." . PHP_EOL;
 exec('box build');
 
 //
