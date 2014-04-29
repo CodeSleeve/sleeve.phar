@@ -168,3 +168,15 @@ sleeve.phar is open-source software licensed under the [MIT license](http://open
 ## How can I share my generator.json and templates?
 
 So you've got some cool generators and templates eh? Put in a pull request about them (be sure to fork and show me your setup). Remember it doesn't have to be laravel specific templates either. You can create generators for other languages if you want.
+
+## Update Sleeve.phar version
+
+I create a update-version.php that will build a new version of this phar file and update the necessary places with new version and sha1 (bin/sleeve and manifest.json).
+
+To run just do
+
+```
+php build.php
+```
+
+You'll need [box](https://github.com/kherge/php-box) installed for this to work.
