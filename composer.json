@@ -17,7 +17,8 @@
         "codesleeve/generator": "dev-master",
         "illuminate/support": "4.1.*",
         "guzzle/guzzle": "3.7.*",
-        "symfony/console": "2.4.*"
+        "symfony/console": "2.4.*",
+        "herrera-io/phar-update": "1.*"
     },
     "config": {
         "bin-dir": "bin",

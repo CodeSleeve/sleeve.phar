@@ -21,7 +21,7 @@ class {{Entity}}Controller extends BaseController
 	 */
 	public function index()
 	{
-		${{entities}} = {{Entity}}::all();
+		${{entities}} = {{Entity}}::paginate();
 
 		return View::make('{{_entities_}}.index', compact('{{entities}}'));
 	}
@@ -33,7 +33,9 @@ class {{Entity}}Controller extends BaseController
 	 */
 	public function create()
 	{
-		${{entity}} = {{Entity}}::newInstance(Input::old());
+		${{entity}} = new {{Entity}};
+
+		${{entity}}->fill(Input::old());
 
 		return View::make('{{_entities_}}.create', compact('{{entity}}'));
 	}
@@ -79,6 +81,8 @@ class {{Entity}}Controller extends BaseController
 	public function edit($id)
 	{
 		${{entity}} = {{Entity}}::findOrFail($id);
+
+		${{entity}}->fill(Input::old());
 
 		return View::make('{{_entities_}}.show', compact('{{entity}}'));
 	}

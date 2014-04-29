@@ -43,8 +43,8 @@ class LaravelContext implements Codesleeve\Generator\Interfaces\ContextInterface
 		$timestamp = $timestamp->format('Y\_m\_d\_His');
 
 		$context['migration_timestamp'] = $timestamp;
-		$context['migration_classname'] = 'Add' . $context['Entities']. 'Table';
-		$context['migration_filename'] = $timestamp . '_add_' . $context['_entities_'] . '_table';
+		$context['migration_classname'] = 'Create' . $context['Entities']. 'Table';
+		$context['migration_filename'] = $timestamp . '_create_' . $context['_entities_'] . '_table';
 
 		return $context;
 	}
