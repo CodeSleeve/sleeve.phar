@@ -1,4 +1,13 @@
-<h3>Attributes</h3>
+<div class="row">
+    <div class="col-sm-12">
+		<h3>
+            Viewing User <?= ${{entity}}->id ?>
+            <a href="javascript:history.back();" class="btn btn-primary pull-right">Back</a>
+        </h3>
+    </div>
+</div><hr>
+
+<h4>Attributes</h4>
 
 {% for attribute in attributes %}
 <div class="row">
@@ -10,7 +19,7 @@
 
 {% endfor %}
 
-<h3>Belongs to</h3>
+<h4>Belongs to</h4>
 
 {% for belongTo in belongsTo %}
 <div class="row">

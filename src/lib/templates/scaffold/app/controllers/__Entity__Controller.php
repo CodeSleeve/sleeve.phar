@@ -84,7 +84,7 @@ class {{Entity}}Controller extends BaseController
 
 		${{entity}}->fill(Input::old());
 
-		return $this->layout->nest('content', '{{_entities_}}.show', compact('{{entity}}'));
+		return $this->layout->nest('content', '{{_entities_}}.edit', compact('{{entity}}'));
 	}
 
 	/**
