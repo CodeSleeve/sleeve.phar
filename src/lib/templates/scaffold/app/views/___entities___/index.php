@@ -32,15 +32,15 @@
 				<td>
 					<div class="actionButtons">
 						<a href="<?= action("{{Entity}}Controller@show", [${{entity}}->id]) ?>" title="View">
-							<i class="fa fa-eye"></i>
+							<i class="fa fa-eye"></i> View
 						</a>
 
 						<a href="<?= action("{{Entity}}Controller@edit", [${{entity}}->id]) ?>" title="Edit">
-                            <i class="fa fa-pencil"></i>
+                            <i class="fa fa-pencil"></i> Edit
 						</a>
 
 						<a href="<?= action("{{Entity}}Controller@destroy", [${{entity}}->id]) ?>" title="Remove" data-method="DELETE">
-                            <i class="fa fa-times"></i>
+                            <i class="fa fa-times"></i> Remove
 						</a>
 					</div>
 				</td>
@@ -49,4 +49,4 @@
 	</tbody>
 </table>
 
-<?= ${{entity}}->links() ?>
+<?= ${{entities}}->links() ?>

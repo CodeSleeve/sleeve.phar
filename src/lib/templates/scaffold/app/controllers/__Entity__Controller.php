@@ -21,9 +21,9 @@ class {{Entity}}Controller extends BaseController
 	 */
 	public function index()
 	{
-		${{entities}} = {{Entity}}::all();
+		${{entities}} = {{Entity}}::paginate();
 
-		return View::make('{{_entities_}}.index', compact('{{entities}}'));
+		return $this->layout->nest('content', '{{_entities_}}.index', compact('{{entities}}'));
 	}
 
 	/**
@@ -33,9 +33,11 @@ class {{Entity}}Controller extends BaseController
 	 */
 	public function create()
 	{
-		${{entity}} = {{Entity}}::newInstance(Input::old());
+		${{entity}} = new {{Entity}};
 
-		return View::make('{{_entities_}}.create', compact('{{entity}}'));
+		${{entity}}->fill(Input::old());
+
+		return $this->layout->nest('content', '{{_entities_}}.create', compact('{{entity}}'));
 	}
 
 	/**
@@ -67,7 +69,7 @@ class {{Entity}}Controller extends BaseController
 	{
 		${{entity}} = {{Entity}}::findOrFail($id);
 
-		return View::make('{{_entities_}}.show', compact('{{entity}}'));
+		return $this->layout->nest('content', '{{_entities_}}.show', compact('{{entity}}'));
 	}
 
 	/**
@@ -80,7 +82,9 @@ class {{Entity}}Controller extends BaseController
 	{
 		${{entity}} = {{Entity}}::findOrFail($id);
 
-		return View::make('{{_entities_}}.show', compact('{{entity}}'));
+		${{entity}}->fill(Input::old());
+
+		return $this->layout->nest('content', '{{_entities_}}.show', compact('{{entity}}'));
 	}
 
 	/**
