@@ -7,7 +7,7 @@ class LaravelWriter extends Codesleeve\Generator\FileWriter
 {
 	public $neverOverwrite = array(
 		'app/views/layouts/scaffold.php',
-		'app/test/IntegrationTestCase.php',
+		'app/tests/IntegrationTestCase.php',
 	);
 
 	public function write(array $files, OutputInterface $output, HelperSet $helperSet, $options = array())

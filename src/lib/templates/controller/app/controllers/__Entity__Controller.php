@@ -51,7 +51,7 @@ class {{Entity}}Controller extends BaseController
 
 		if ($validator->fails())
 		{
-			return Redirect::back()->withErrors($validator)->withInput();
+			return Redirect::route('{{_entities_}}.create')->withErrors($validator)->withInput();
 		}
 
 		{{Entity}}::create($data);

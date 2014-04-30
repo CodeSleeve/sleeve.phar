@@ -81,17 +81,17 @@ class {{Entity}}ControllerTest extends IntegrationTestCase
 
 		$data = [
 {% for belongTo in belongsTo %}
-				'{{belongTo._name_}}_id' => $faker->randomNumber();
+			'{{belongTo._name_}}_id' => $faker->randomNumber();
 {% endfor %}
 {% for attribute in attributes %}
 {% if attribute.type == 'integer' %}
-				'{{attribute.name_unmodified}}' => $faker->randomNumber(),
+			'{{attribute.name_unmodified}}' => $faker->randomNumber(),
 {% elseif attribute.type == 'string' %}
-				'{{attribute.name_unmodified}}' => $faker->word(),
+			'{{attribute.name_unmodified}}' => $faker->word(),
 {% elseif attribute.type == 'datetime' %}
-				'{{attribute.name_unmodified}}' => $faker->dateTime(),
+			'{{attribute.name_unmodified}}' => $faker->dateTime(),
 {% else %}
-				'{{attribute.name_unmodified}}' => $faker->randomNumber(),
+			'{{attribute.name_unmodified}}' => $faker->randomNumber(),
 {% endif %}
 {% endfor %}
 		];
