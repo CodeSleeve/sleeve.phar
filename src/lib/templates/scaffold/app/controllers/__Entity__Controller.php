@@ -101,7 +101,7 @@ class {{Entity}}Controller extends BaseController
 
 		if ($validator->fails())
 		{
-			return Redirect::back()->withErrors($validator)->withInput();
+			return Redirect::route('{{_entities_}}.edit', $id)->withErrors($validator)->withInput();
 		}
 
 		${{entity}}->update($data);

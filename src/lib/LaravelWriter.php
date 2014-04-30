@@ -6,7 +6,8 @@ use Symfony\Component\Console\Helper\HelperSet;
 class LaravelWriter extends Codesleeve\Generator\FileWriter
 {
 	public $neverOverwrite = array(
-		'app/views/layouts/scaffold.php'
+		'app/views/layouts/scaffold.php',
+		'app/test/IntegrationTestCase.php',
 	);
 
 	public function write(array $files, OutputInterface $output, HelperSet $helperSet, $options = array())
