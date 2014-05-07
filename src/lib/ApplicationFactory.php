@@ -10,6 +10,8 @@ class ApplicationFactory
 
 		$app->add(new Laravel\Craft\NewCommand);
 
+		$app->add(new CustomizeCommand);
+
 		$app->add(new SelfUpdateCommand);
 
 		return $app;
