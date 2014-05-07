@@ -16,7 +16,9 @@ class CustomizeCommand extends BaseCommand
 	protected function configure()
 	{
 		$this->setName('customize')
-			 ->setDescription('Copy templates and generator.json into current directory');
+			 ->setDescription('Copy templates and generator.json into current directory')
+ 			 ->addOption('config', null, InputOption::VALUE_REQUIRED, 'Use your own generate.json files')
+			 ->addOption('yes', null, InputOption::VALUE_NONE, 'Automatically answer yes to any prompts');
 	}
 
 	/**

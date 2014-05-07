@@ -43,7 +43,7 @@ But don't worry, if that doesn't quite fit the bill then you can jump to the nex
 
 ## Customizing the generator
 
-You can completely override and configure any aspect of the generators. Create a [generator.json](https://github.com/CodeSleeve/sleeve.phar/blob/master/src/lib/generator.json) that is where you will be running your sleeve command from (i.e. the laravel project root). You can also use `sleeve -c /some/path/to/config.json` if you want.
+You can completely override and configure any aspect of the generators. Create a [generator.json](https://github.com/CodeSleeve/sleeve.phar/blob/master/src/lib/generator.json) that is where you will be running your sleeve command from (i.e. the laravel project root). You can also use `sleeve --config=/some/path/to/config.json` if you want. You can create an bash alias for this if you want to have a global customized config you use for the most part.
 
 Here are a list of things you can override.
 

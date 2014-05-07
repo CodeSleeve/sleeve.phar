@@ -1,7 +1,7 @@
 <?php
 
 // this will set the version for us
-$version = '1.1.9';
+$version = '1.2.0';
 
 //
 //
